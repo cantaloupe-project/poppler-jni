@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'edu.illinois.library.poppler'
+version = '1.0-SNAPSHOT'
+description = 'JNI binding to the Poppler PDF library'
+sourceCompatibility = JavaVersion.VERSION_1_9
+targetCompatibility = JavaVersion.VERSION_1_9
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+}
+
+test {
+    useJUnitPlatform()
+    maxHeapSize = '2G'
+    systemProperty 'java.awt.headless', 'true'
+}
